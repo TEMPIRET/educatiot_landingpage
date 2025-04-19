@@ -8,6 +8,39 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+    <style>
+        /* Form notification styles */
+        .notification {
+            padding: 12px 16px;
+            border-radius: 6px;
+            margin-top: 16px;
+            font-weight: 500;
+            animation: fadeIn 0.3s ease-in-out;
+        }
+
+        .notification.success {
+            background-color: #d1f7c4;
+            color: #2c742f;
+            border: 1px solid #b8e6b3;
+        }
+
+        .notification.error {
+            background-color: #ffe0e0;
+            color: #b71c1c;
+            border: 1px solid #ffcdd2;
+        }
+
+        /* Button states */
+        .waitlist-form button:disabled {
+            opacity: 0.7;
+            cursor: not-allowed;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
 </head>
 <body>
     <header>
@@ -95,8 +128,7 @@
         <section id="how-it-works" class="section section-alt">
             <div class="container">
                 <div class="section-header">
-                    <h2 class="section-title">How EduAI works</h2>
-                    <p class="section-description">Getting started is simple - follow these easy steps to transform your learning experience.</p>
+                    <h2 class="section-title">How EducatioT works</h2> <p class="section-description">Getting started is simple - follow these easy steps to transform your learning experience.</p>
                 </div>
 
                 <div class="steps">
@@ -123,13 +155,15 @@
         <section id="waitlist" class="cta section-alt">
              <div class="container">
                  <h2 class="cta-title">Join our waiting list</h2>
-                 <p class="cta-description">Be among the first to experience EduAI and help shape the future of AI-powered education.</p>
-                 <form class="waitlist-form" action="#" method="post">
+                 <p class="cta-description">Be among the first to experience EducatioT and help shape the future of AI-powered education.</p>
+                 <form class="waitlist-form" action="https://formspree.io/f/xovegeea" method="POST">
                      <label for="waitlist-email" class="sr-only">Enter your university email</label>
                      <div class="form-group">
                          <input type="email" id="waitlist-email" name="email" class="form-control" placeholder="Enter your university email" required>
                          <button type="submit" class="btn">Join Waitlist</button>
                      </div>
+                     <!-- Hidden honeypot field to prevent spam -->
+                     <input type="text" name="_gotcha" style="display:none" />
                  </form>
              </div>
          </section>
@@ -141,63 +175,117 @@
                 <div class="footer-about">
                     <div class="footer-logo">EducatioT</div>
                     <p class="footer-description">Revolutionizing tertiary education with AI-powered learning tools that help students master any subject.</p>
-                       <div class="social-links">
-                           <a href="#" aria-label="EduAI on Twitter">
-                               <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M23.954 4.569c-.885.389-1.83.654-2.825.775 1.014-.611 1.794-1.574 2.163-2.723-.951.555-2.005.959-3.127 1.184-.896-.959-2.173-1.559-3.591-1.559-2.717 0-4.92 2.203-4.92 4.917 0 .39.045.765.127 1.124C7.691 8.094 4.066 6.13 1.64 3.161c-.427.722-.666 1.561-.666 2.475 0 1.71.87 3.213 2.188 4.096-.807-.026-1.566-.248-2.228-.616v.061c0 2.385 1.693 4.374 3.946 4.827-.413.111-.849.171-1.296.171-.314 0-.615-.03-.916-.086.631 1.953 2.445 3.377 4.604 3.417-1.68 1.319-3.809 2.105-6.102 2.105-.39 0-.775-.023-1.15-.067 2.169 1.387 4.768 2.209 7.557 2.209 9.054 0 13.999-7.496 13.999-13.986 0-.209 0-.42-.015-.63.961-.689 1.799-1.56 2.461-2.548l-.047-.02z"/></svg>
-                           </a>
-                           <a href="#" aria-label="EduAI on LinkedIn">
-                               <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.225 0z"/></svg>
-                           </a>
-                           <a href="#" aria-label="EduAI on Instagram">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.28-.059-1.689-.073-4.948-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
-                           </a>
-                       </div>
-                </div>
-                <div>
-                    <h3 class="footer-heading">Product</h3>
-                    <ul class="footer-links">
-                        <li><a href="#features">Features</a></li>
-                        <li><a href="#how-it-works">How It Works</a></li>
-                        <li><a href="#">Pricing (Coming Soon)</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <h3 class="footer-heading">Company</h3>
-                    <ul class="footer-links">
-                        <li><a href="#">About Us</a></li>
-                        <li><a href="#">Careers</a></li>
-                        <li><a href="#">Blog</a></li>
-                        <li><a href="#">Contact</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <h3 class="footer-heading">Legal</h3>
-                    <ul class="footer-links">
-                        <li><a href="#">Privacy Policy</a></li>
-                        <li><a href="#">Terms of Service</a></li>
-                        <li><a href="#">Cookie Policy</a></li>
-                    </ul>
-                </div>
+                    </div>
+
+                <div class="social-links">
+                    <a href="#" aria-label="EducatioT on Twitter">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M23.954 4.569c-.885.389-1.83.654-2.825.775 1.014-.611 1.794-1.574 2.163-2.723-.951.555-2.005.959-3.127 1.184-.896-.959-2.173-1.559-3.591-1.559-2.717 0-4.92 2.203-4.92 4.917 0 .39.045.765.127 1.124C7.691 8.094 4.066 6.13 1.64 3.161c-.427.722-.666 1.561-.666 2.475 0 1.71.87 3.213 2.188 4.096-.807-.026-1.566-.248-2.228-.616v.061c0 2.385 1.693 4.374 3.946 4.827-.413.111-.849.171-1.296.171-.314 0-.615-.03-.916-.086.631 1.953 2.445 3.377 4.604 3.417-1.68 1.319-3.809 2.105-6.102 2.105-.39 0-.775-.023-1.15-.067 2.169 1.387 4.768 2.209 7.557 2.209 9.054 0 13.999-7.496 13.999-13.986 0-.209 0-.42-.015-.63.961-.689 1.799-1.56 2.461-2.548l-.047-.02z"/></svg>
+                    </a>
+                    <a href="#" aria-label="EducatioT on LinkedIn">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.225 0z"/></svg>
+                    </a>
+                    <a href="#" aria-label="EducatioT on Instagram">
+                         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.28-.059-1.689-.073-4.948-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+                </a>
+            </div>
             </div>
 
-            <div class="footer-bottom">
-                <p>&copy; <span id="current-year">2025</span> EduAI. All rights reserved.</p>
-                   </div>
-        </div>
-    </footer>
+        <div class="footer-bottom">
+            <p>&copy; <span id="current-year">2025</span> EducatioT. All rights reserved.</p> </div>
+    </div>
+</footer>
 
-    <script>
-        document.getElementById('current-year').textContent = new Date().getFullYear();
-        // Add JavaScript here for mobile menu toggle
-        const menuButton = document.getElementById('mobile-menu-button');
-        const nav = document.getElementById('main-nav');
-        menuButton.addEventListener('click', () => {
-            const isExpanded = menuButton.getAttribute('aria-expanded') === 'true';
-            menuButton.setAttribute('aria-expanded', !isExpanded);
-            nav.classList.toggle('active');
-            menuButton.setAttribute('aria-label', isExpanded ? 'Open navigation menu' : 'Close navigation menu');
+<script>
+    // Set current year in footer
+    document.getElementById('current-year').textContent = new Date().getFullYear();
+    
+    // Mobile menu toggle
+    const menuButton = document.getElementById('mobile-menu-button');
+    const nav = document.getElementById('main-nav');
+    menuButton.addEventListener('click', () => {
+        const isExpanded = menuButton.getAttribute('aria-expanded') === 'true';
+        menuButton.setAttribute('aria-expanded', !isExpanded);
+        nav.classList.toggle('active');
+        menuButton.setAttribute('aria-label', isExpanded ? 'Open navigation menu' : 'Close navigation menu');
+    });
+    
+    // Waitlist form handling
+    const waitlistForm = document.querySelector('.waitlist-form');
+    const formGroup = waitlistForm.querySelector('.form-group');
+    
+    // Function to show notification messages
+    function showNotification(message, isError = false) {
+        // Remove any existing notifications
+        const existingNotifications = document.querySelectorAll('.notification');
+        existingNotifications.forEach(note => note.remove());
+        
+        // Create notification element
+        const notification = document.createElement('div');
+        notification.className = isError ? 'notification error' : 'notification success';
+        notification.textContent = message;
+        
+        // Insert after the form group
+        formGroup.parentNode.insertBefore(notification, formGroup.nextSibling);
+        
+        // Remove after 5 seconds if it's an error
+        if (isError) {
+            setTimeout(() => {
+                notification.remove();
+            }, 5000);
+        }
+    }
+    
+    // Handle form submission
+    waitlistForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        const emailInput = document.getElementById('waitlist-email');
+        const email = emailInput.value.trim();
+        const submitButton = waitlistForm.querySelector('button[type="submit"]');
+        
+        // Basic validation for university email
+        if (!email.includes('@')) {
+            showNotification('Please enter a valid email address', true);
+            return;
+        }
+        
+        // Disable button and show loading state
+        const originalButtonText = submitButton.textContent;
+        submitButton.textContent = 'Submitting...';
+        submitButton.disabled = true;
+        
+        // Prepare form data
+        const formData = new FormData(waitlistForm);
+        
+        // Send to Formspree
+        fetch(waitlistForm.action, {
+            method: 'POST',
+            body: formData,
+            headers: {
+                'Accept': 'application/json'
+            }
+        })
+        .then(response => response.json())
+        .then(data => {
+            if (data.ok) {
+                // Show success message
+                emailInput.value = '';
+                showNotification('Thank you for joining our waitlist! We\'ll be in touch soon.');
+            } else {
+                throw new Error('Form submission failed');
+            }
+        })
+        .catch(error => {
+            // Show error message
+            showNotification('Something went wrong. Please try again later.', true);
+        })
+        .finally(() => {
+            // Reset button state
+            submitButton.textContent = originalButtonText;
+            submitButton.disabled = false;
         });
-    </script>
+    });
+</script>
 
 </body>
 </html>
